@@ -1,4 +1,5 @@
 #!/bin/bash
+# bash -c "$(curl -fsSL https://github.com/MAAICV/envSetup/raw/master/set-git-env.sh)"
 today=`date "+%Y-%m-%d"`
 while true; do
     read -p "Are you sure? [y|n]" yn
@@ -10,7 +11,7 @@ while true; do
 done
 
 # backup data
-tar zcvf bakdata-${today}.tgz face_server/face_image* face_server/datadir
+tar zcf bakdata-${today}.tgz face_server/face_image* face_server/datadir
 
 mkdir -p data/face data/food
 cd data/face; mv ../../face_server/face_image* .; mv ../../face_server/models .; cd -
