@@ -21,9 +21,10 @@ cd data; mv ../face_server/datadir .; cd -
 cd face_server; ./down.sh; cd -;
 mv face_server face_server_tmp 
 git clone git@github.com:MAAICV/face_server.git
-icdiff data/face/face_server.ini face_server/face_server.ini_
+cp data/face/face_server.ini data/face/face_server.ini_old
 ./face_server/config.py data/face/face_server.ini face_server/face_server.ini_ 
-rm face_server/face_server.ini_
+icdiff data/face/face_server.ini_old data/face/face_server.ini  
+rm face_server/face_server.ini_ data/face/face_server.ini_old
 
 tar zcf bakcode-${today}.tgz face_server_tmp
 rm -r face_server_tmp
