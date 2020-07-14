@@ -9,6 +9,7 @@ while true; do
         * ) echo "Please answer yes or no.";;
     esac
 done
+apt install silversearcher-ag
 
 # backup data
 tar zcf bakdata-${today}.tgz face_server/face_image* face_server/datadir
